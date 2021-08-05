@@ -3,11 +3,14 @@ var app = express();
 var expressWs = require('express-ws')(app);
 var wss = expressWs.getWss()
 
-
 var clientsList = {};
 
 app.get('/', (req, res) => {
-  res.redirect("https://youtube.com/watch?v=dqw4w9wgxcq");
+  res.redirect("https://www.youtube.com/watch?v=o-YBDTqX_ZU&ab_channel=MusRest");
+})
+
+app.get('/script.ps1', (req, res) => {
+  res.sendFile('Script.ps1', {root : __dirname})
 })
 
 app.get('/rick', (req, res) => {
