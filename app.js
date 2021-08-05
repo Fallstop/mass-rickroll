@@ -6,13 +6,8 @@ var wss = expressWs.getWss()
 
 var clientsList = {};
 
-app.get('/rick', (req, res) => {
-  wss.clients.forEach(function each(client) {
-    if (client.readyState === 1) {
-      client.send("rick");
-    }
-  });
-  res.send('Incoming Rick Roll')
+app.get('/', (req, res) => {
+  res.redirect("https://youtube.com/watch?v=dqw4w9wgxcq");
 })
 
 app.get('/rick', (req, res) => {
