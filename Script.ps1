@@ -1,6 +1,6 @@
 Try{  
     Do{
-        $URL = 'ws://localhost:3000'
+        $URL = 'ws://mass-rickroll.host.qrl.nz'
         $WS = New-Object System.Net.WebSockets.ClientWebSocket                                                
         $CT = New-Object System.Threading.CancellationToken
         $WS.Options.UseDefaultCredentials = $true
