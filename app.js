@@ -25,7 +25,11 @@ app.get("/rick", (req, res) => {
 });
 
 app.get("/active", (req, res) => {
-  res.write(wss.clients.size);
+  res.send(JSON.stringify(
+    {
+      active: wss.clients.size
+    }
+  ));
 });
 
 app.ws("/", function (ws, req) {
