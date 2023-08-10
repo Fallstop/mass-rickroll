@@ -24,6 +24,15 @@ app.get("/rick", (req, res) => {
   res.send("Incoming Rick Roll");
 });
 
+app.get("/blue", (req, res) => {
+  wss.clients.forEach(function each(client) {
+    if (client.readyState === 1) {
+      client.send("blue");
+    }
+  });
+  res.send("Incoming Blue Lobster");
+});
+
 app.get("/active", (req, res) => {
   res.send(JSON.stringify(
     {
