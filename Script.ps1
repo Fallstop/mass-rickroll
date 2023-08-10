@@ -24,6 +24,8 @@ Try {
                     Invoke-WebRequest "https://cloudfront-us-east-1.images.arcpublishing.com/advancelocal/OF2RNL3XZZFB5B2PLE7R3RBIBE.jpeg" -OutFile  $env:USERPROFILE\GetLobstered.jpg;
                 }
                 Write-Host "BLUEEE";
+                Set-ItemProperty -path "HKCU:\Control Panel\Desktop\" -name wallpaper -value $env:USERPROFILE\GetLobstered.jpg
+                rundll32.exe user32.dll, UpdatePerUserSystemParameters
                 # Start-Process "mspaint" -ArgumentList $env:USERPROFILE\GetLobstered.jpg -WindowStyle maximized;
                 Add-Type -AssemblyName 'System.Windows.Forms'
                 $file = (get-item $env:USERPROFILE\GetLobstered.jpg)
